@@ -28,6 +28,8 @@ module React
     def self.transform(code, options={})
       js_options = {
         stripTypes: options[:strip_types],
+        es6module: options[:es6module],
+        nonStrictEs6module: options[:nonStrictEs6module],
         harmony: options[:harmony],
       }
       result = context.call('JSXTransformer.transform', code, js_options)
